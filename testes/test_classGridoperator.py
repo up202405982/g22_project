@@ -1,19 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+@author: António Brito / Carlos Bragança
+(2021)
+#objective: Test classes based on generic class Gclass
 
-
+"""""
 db = 'Energy.db'
 
-#Uncomment to test class Powerplant (select next 4 lines and press ctrl-1)
-from classes.distribution import Distribution
-test_class = Distribution
-ob = '76;4393;25-01-25;515;1062'
-db = 'distribution.db'
+#Uncomment to test class gridoperator (select next 4 lines and press ctrl-1)
+from classes.gridoperator import GridOperator
+test_class = GridOperator
+ob = '2;Karla Williams;746.435.9498'
+
 
 
 
 import datetime
 
 #Reads the test_class.csv file
-test_class.read('data/' + db)
+GridOperator.read('data/' + db)
 
 op = ''
 while op != 'q':
@@ -136,3 +141,4 @@ while op != 'q':
                 test_class.current(fobjs[0].id)
                 for obj in fobjs:
                     print(obj)
+

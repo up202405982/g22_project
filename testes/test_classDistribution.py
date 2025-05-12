@@ -1,24 +1,19 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  5 18:07:34 2025
 
-@author: admin
-"""
 
 db = 'Energy.db'
 
 #Uncomment to test class Powerplant (select next 4 lines and press ctrl-1)
-from classes.powerplant import Powerplant
-test_class = Powerplant
-ob = '25;Karla Williams;515;Solar;2'
-db = 'powerplant.db'
+from classes.distribution import Distribution
+test_class = Distribution
+ob = '76;4393;25-01-25;515;1062'
+
 
 
 
 import datetime
 
 #Reads the test_class.csv file
-G22_Energy.read('data/' + db)
+Distribution.read('data/' + db)
 
 op = ''
 while op != 'q':

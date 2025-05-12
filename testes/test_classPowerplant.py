@@ -7,18 +7,18 @@ Created on Sat Apr  5 18:07:34 2025
 
 db = 'Energy.db'
 
-#Uncomment to test class Region (select next 4 lines and press ctrl-1)
-from classes.region import Region
-test_class = Region
-ob = '25;Karla Williams;4393;700514'
-db = 'region.db'
+#Uncomment to test class Powerplant (select next 4 lines and press ctrl-1)
+from classes.powerplant import Powerplant
+test_class = Powerplant
+ob = '25;Karla Williams;515;Solar;2'
+
 
 
 
 import datetime
 
 #Reads the test_class.csv file
-G22_Energy.read('data/' + db)
+Powerplant.read('data/' + db)
 
 op = ''
 while op != 'q':
