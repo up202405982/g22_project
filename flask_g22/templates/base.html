@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Userlogin</title>
+    <title>Flask demo PCII</title>
     {% block title %}
     {% endblock %}
   </head>
@@ -14,6 +14,10 @@
                     <li><a class="button" href="/login">Login</a></li>
                 {% else %}
                     <li><a class="button" href="/logoff">Logoff</a></li>
+                    <li><a class="button" href="/Powerplant">Powerplant</a></li>
+                    <li><a class="button" href="/Region">Region</a></li>
+                    <li><a class="button" href="/GridOperator">Grid Operator</a></li>
+                    <li><a class="button" href="/Distribution">Distribution</a></li>
                     <li><a class="button" href="/Userlogin">Users</a></li>
                     <li><a class="button" style="color:lightblue">User: {{ulogin}}</a></li>
                 {% endif %}

@@ -56,10 +56,10 @@ class Powerplant(Gclass):
         self._capacity = capacity 
     
     @property
-    def salary(self):
-        return self._salary
+    def plant_type(self):
+        return self._plant_type
     
-    @type.setter
+    @plant_type.setter
     def plant_type(self, plant_type):
         self._plant_type = plant_type
         
