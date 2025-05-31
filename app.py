@@ -1,26 +1,23 @@
 from flask import Flask, render_template, request, session
-from classes.distribution import Distribution
-from datafile import filename
 from classes.gridoperator import GridOperator
+from datafile import filename
 from classes.powerplant import Powerplant
 from classes.region import Region
-from classes.gclass import Gclass
+from classes.distribution import Distribution
+
 from classes.userlogin import Userlogin
-from subs.apps_distribution import apps_distribution 
-from subs.apps_gridoperator import apps_gridoperator
-from subs.apps_region import apps_region 
-from subs.apps_powerplant import apps_powerplant
+from subs.apps_gridoperator import apps_gridoperator 
 from subs.apps_gform import apps_gform 
 from subs.apps_subform import apps_subform 
 from subs.apps_userlogin import apps_userlogin
 
 app = Flask(__name__)
 
-Distribution.read(filename + 'Energy.db')
-Region.read(filename + 'Energy.db')
 GridOperator.read(filename + 'Energy.db')
 Powerplant.read(filename + 'Energy.db')
-Userlogin.read(filename + 'Energy.db')
+Region.read(filename + 'Energy.db')
+Distribution.read(filename + 'Energy.db')
+Userlogin.read(filename + 'business.db')
 app.secret_key = 'BAD_SECRET_KEY'
 @app.route("/")
 def index():
@@ -41,17 +38,8 @@ def chklogin():
         session["user"] = user
         return render_template("index.html", ulogin=session.get("user"))
     return render_template("login.html", user=user, password = password, ulogin=session.get("user"),resul = resul)
-@app.route("/Region", methods=["post","get"])
-def region():
-    return apps_region()
-@app.route("/Distribution", methods=["post","get"])
-def distribution():
-    return apps_distribution()
-@app.route("/Powerplant", methods=["post","get"])
-def powerplant():
-    return apps_powerplant()
 @app.route("/GridOperator", methods=["post","get"])
-def gridoperator():
+def person():
     return apps_gridoperator()
 @app.route("/gform/<cname>", methods=["post","get"])
 def gform(cname):
