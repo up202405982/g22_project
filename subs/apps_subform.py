@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, session
-from classes.region import Region
-from datafile import filename
 from classes.gridoperator import GridOperator
-from classes.powerplant import Powerplant
+from datafile import filename
 from classes.distribution import Distribution
+from classes.region import Region
+from classes.powerplant import Powerplant
+
 from classes.userlogin import Userlogin
 
 prev_option = ""

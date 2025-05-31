@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, session
 from classes.gridoperator import GridOperator
-from classes.powerplant import Powerplant
 
 prev_option = ""
 
@@ -33,7 +32,7 @@ def apps_gridoperator():
             obj = GridOperator.current()
             obj.name = request.form["name"]
             obj.contact = request.form["contact"]
-            #?obj.id = float(request.form["id"])
+            
             GridOperator.update(obj.id)
         elif option == "first":
             GridOperator.first()
@@ -55,6 +54,7 @@ def apps_gridoperator():
             id = obj.id
             name = obj.name
             contact = obj.contact
+            
         return render_template("gridoperator.html", butshow=butshow, butedit=butedit, 
                         id=id,name = name,contact=contact, 
                         ulogin=session.get("user"))
